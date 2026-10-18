@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #080808;
+  --foreground: #f0f0f0;
+  --primary-color: #e8000d;
+  --secondary-color: #b0b8c4;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar Gamer */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a1a1a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e8000d;
+}
+
+/* Cyber accents and glowing borders */
+.cyber-border {
+  border: 1px solid rgba(232, 0, 13, 0.2);
+  transition: all 0.25s ease-in-out;
+}
+
+.cyber-border:hover {
+  border-color: rgba(232, 0, 13, 0.6);
+  box-shadow: 0 0 15px rgba(232, 0, 13, 0.2);
+}
+
+.cyber-glass {
+  background: rgba(12, 8, 8, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Glow effects */
+.text-glow-red { text-shadow: 0 0 20px rgba(232,0,13,0.6), 0 0 40px rgba(232,0,13,0.3); }
+
+.text-glow-silver { text-shadow: 0 0 20px rgba(176,184,196,0.5), 0 0 40px rgba(176,184,196,0.2); }
+
+/* Neon red shadow utility */
+.shadow-neon-red {
+  box-shadow: 0 0 16px rgba(232, 0, 13, 0.45);
+}
+
+.shadow-neon-silver {
+  box-shadow: 0 0 12px rgba(176, 184, 196, 0.3);
+}
+
+/* ========================================
+   PROFESSIONAL POLISH — VISION LEAGUE
+   ======================================== */
+
+/* Fade-in animation for modals and alerts */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 0.22s ease-out both; }
+
+/* Slide-up for cards */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slideUp { animation: slideUp 0.3s ease-out both; }
+
+/* Shimmer skeleton loader */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #111 25%, #1c1c1c 50%, #111 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* Section divider red line */
+.section-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232,0,13,0.4), transparent);
+  margin: 0;
+}
+
+/* Card glow on hover */
+.card-hover-glow:hover {
+  box-shadow: 0 0 20px rgba(232, 0, 13, 0.12), 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* Better custom scrollbar for modals */
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #2a1a1a; border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #e8000d; }
+
+/* VS pulse animation for featured duels */
+@keyframes vsPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(232,0,13,0.3); }
+  50%       { box-shadow: 0 0 20px rgba(232,0,13,0.7); }
+}
+.vs-pulse { animation: vsPulse 2s ease-in-out infinite; }
+
+/* Gradient text utility */
+.text-gradient-red {
+  background: linear-gradient(135deg, #ff3333 0%, #e8000d 50%, #cc0000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Professional card base */
+.pro-card {
+  background: #0e0e0e;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.pro-card:hover {
+  border-color: rgba(232,0,13,0.3);
+  box-shadow: 0 0 16px rgba(232,0,13,0.08);
+}
+
+/* Badge pulse for LIVE indicator */
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+.badge-live { animation: livePulse 1.5s ease-in-out infinite; }
+
+/* ── PROFESSIONAL DETAILS ── */
+
+/* Smooth scroll globally */
+html { scroll-behavior: smooth; }
+
+/* Header top red accent line */
+header.sticky::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #e8000d 40%, #ff3333 60%, transparent 100%);
+  pointer-events: none;
+}
+header.sticky { position: relative; }
+
+/* Better image rendering */
+img { image-rendering: -webkit-optimize-contrast; }
+
+/* Input focus ring */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+/* Button active state */
+button:active { transform: scale(0.97); }
+
+/* Prevent layout shift on load */
+.prevent-shift { min-height: 0; }
+
+/* Subtle background texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.01'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
